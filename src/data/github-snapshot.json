@@ -1,0 +1,84 @@
+{
+  "fetchedAt": "2026-10-20T07:17:02.077Z",
+  "user": {
+    "login": "QTrieu0610",
+    "name": "Võ Quang Triều",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/269081687?v=4",
+    "htmlUrl": "https://github.com/QTrieu0610",
+    "bio": null,
+    "location": "Việt Nam",
+    "blog": null,
+    "publicRepos": 3,
+    "createdAt": "2026-03-18T03:16:01Z"
+  },
+  "repos": [
+    {
+      "name": "tieru-agent",
+      "description": "Tieru agent is your personal AI agent, on your own laptop, in code you can read in an afternoon — harness + loop + memory + eval..",
+      "htmlUrl": "https://github.com/QTrieu0610/tieru-agent",
+      "homepage": null,
+      "language": "Python",
+      "languages": {
+        "Python": 3371428,
+        "JavaScript": 190255,
+        "CSS": 33187,
+        "PLpgSQL": 7954,
+        "TypeScript": 6758,
+        "HTML": 3957,
+        "Makefile": 2200,
+        "Shell": 2114
+      },
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "createdAt": "2026-08-07T02:27:15Z",
+      "pushedAt": "2026-10-12T06:49:53Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "abc",
+      "description": "123",
+      "htmlUrl": "https://github.com/QTrieu0610/abc",
+      "homepage": null,
+      "language": "HTML",
+      "languages": {
+        "HTML": 400587,
+        "JavaScript": 182845,
+        "Python": 124239,
+        "CSS": 62452
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "createdAt": "2026-06-18T03:16:17Z",
+      "pushedAt": "2026-10-12T03:15:15Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "testing",
+      "description": "123",
+      "htmlUrl": "https://github.com/QTrieu0610/testing",
+      "homepage": null,
+      "language": "Python",
+      "languages": {
+        "Python": 984352,
+        "TypeScript": 494838,
+        "CSS": 21312,
+        "Shell": 17357,
+        "JavaScript": 11796,
+        "PowerShell": 11013,
+        "HTML": 2342,
+        "Dockerfile": 1673
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "createdAt": "2026-08-28T12:02:00Z",
+      "pushedAt": "2026-08-28T12:55:53Z",
+      "fork": false,
+      "archived": false
+    }
+  ]
+}

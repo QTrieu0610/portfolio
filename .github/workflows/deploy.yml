@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Refresh the GitHub data snapshot weekly (Monday 03:00 UTC).
+  schedule:
+    - cron: '0 3 * * 1'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      # Project sites live at /<repo>/; a <user>.github.io repository is served from /.
+      - name: Resolve base path
+        id: base
+        run: |
+          repo="${GITHUB_REPOSITORY#*/}"
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          if [ "${repo,,}" = "${owner}.github.io" ]; then base="/"; else base="/${repo}/"; fi
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+          echo "url=https://${owner}.github.io${base}" >> "$GITHUB_OUTPUT"
+
+      # Token is used only by this build step; it is never embedded in the bundle.
+      - name: Refresh GitHub snapshot
+        run: npm run snapshot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: npm run typecheck
+      - run: npm run lint
+      - name: Build
+        run: npx vite build
+        env:
+          VITE_BASE: ${{ steps.base.outputs.base }}
+          VITE_SITE_URL: ${{ steps.base.outputs.url }}
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
