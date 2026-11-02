@@ -51,14 +51,32 @@ export interface ProfileConfig {
 
 export const profile: ProfileConfig = {
   githubUsername: 'QTrieu0610',
-  role: null,
-  tagline: null,
-  about: [],
-  skills: [],
-  journey: [],
+  role: 'AI Engineer at FPT Software',
+  tagline: 'Building computer vision, video analysis, and LLM-powered applications.',
+  about: [
+    'I am Vo Quang Trieu, an AI Engineer at FPT Software since March 2026 and an Artificial Intelligence graduate of FPT University, Quy Nhon AI Campus. I build Python applications focused on computer vision, video understanding, and LLM workflows.',
+    'My projects include sensitive-content masking with YOLOv11 and CUDA, automatic football highlight generation with temporal and Transformer models, and badminton match analysis with PyTorch and OpenCV. I also work with FastAPI, LangChain, LangGraph, and browser automation.',
+  ],
+  skills: [
+    { label: 'Languages & backend', items: ['Python', 'JavaScript', 'HTML', 'CSS', 'FastAPI'] },
+    { label: 'AI & computer vision', items: ['PyTorch', 'OpenCV', 'Ultralytics', 'CNN', 'Transformers', 'CLIP', 'OCR'] },
+    { label: 'LLM applications & automation', items: ['RAG', 'LangChain', 'LangGraph', 'LLM APIs', 'Playwright'] },
+    { label: 'Data & infrastructure', items: ['Pandas', 'Matplotlib', 'FFmpeg', 'Docker', 'Git', 'AWS', 'MySQL', 'SQL Server', 'PostgreSQL', 'Linux'] },
+  ],
+  journey: [
+    { period: '2026', title: 'AI Engineer for Data Scientists Associate certificate' },
+    { period: '2026', title: 'AI-Driven Infrastructure as Code (IaC) and Cloud Automation' },
+    { period: 'Mar 2026 - Present', title: 'AI Engineer', place: 'FPT Software' },
+    { period: 'Credential', title: 'Claude Certified Architect - Foundations', place: 'Anthropic', url: 'https://www.credly.com/badges/3fc9ba71-b9f4-4ae1-bcf9-e5a31d5f2172' },
+    { period: 'Jun 2026 — Present', title: 'Adaptive AI Crawler (Mock Project)', description: 'Developing browser-based data extraction with session persistence in a three-person team.' },
+    { period: 'May — Aug 2025', title: 'AI-based Sensitive Content Masking System', description: 'Optimized a real-time video detection and blurring pipeline with YOLOv11, CUDA, and Python multiprocessing/threading in a three-person team.' },
+    { period: 'May — Aug 2025', title: 'AI Video Highlight Generation System', description: 'Developed an automatic highlight pipeline inspired by SoccerNetv2, using TPN and Transformer models for action spotting, ResNet-152 and CLIP for feature extraction, and inference caching.' },
+    { period: 'Jan — Mar 2025', title: 'Badminton Match Analysis System', description: 'Built court keypoint detection, shuttlecock tracking, and mini-court visualization with YOLOv11, ResNet50, PyTorch, and OpenCV.' },
+    { period: 'Sep 2022 — 2026', title: 'Bachelor of Artificial Intelligence (Graduated)', place: 'FPT University — Quy Nhon AI Campus' },
+  ],
   contact: {
-    email: null,
-    linkedin: null,
+    email: 'TrieuVQ2@fpt.com',
+    linkedin: 'https://www.linkedin.com/in/trieuvoquang0610/',
     links: [],
   },
   projects: {
